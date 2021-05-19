@@ -18,7 +18,26 @@ body {
 <h1>My Website, V2</h1>
 <p>A website created by me.</p>
 
+
+  <script type="text/javascript">
+    var addon, addonOptions;
+
+    $(function () {
+      addon = new Addon();
+
+      addon.on('init', function (options) {
+        // Dashboard is ready and is signaling to the add-on that it should
+        // render using the passed in options (filters, language, etc.)
+        addonOptions = options;
+        $('button').removeAttr('disabled');
+        showAddonData(addonOptions.data, true);
+      }).on('update', function (options) {
+        // Filters have been updated and Dashboard is passing in updated options
+        addonOptions = _.extend(addonOptions, options);
+        showAddonData(addonOptions.data);
+      });
+  </script>
+
 </body>
 </html>
-
 
