@@ -7,12 +7,10 @@
   <style>
     body { margin: 0; padding: 0; }
   </style>
-  <script type="text/javascript" src="https://wealthica.github.io/wealthica.js/dist/addon.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+
 </head>
 <body>
-  <h3>This is the Wealthica Darrin 16 Example Add-on.</h3>
+  <h3>This is my Wealthica Example Add-on Version 0.</h3>
 
 
   <script type="text/javascript">
@@ -33,67 +31,7 @@
         addonOptions = _.extend(addonOptions, options);
         showAddonData(addonOptions.data);
       });
-/*
-      $('#addTransaction').on('click', function () {
-        $(this).attr('disabled', 'disabled');
 
-        addon.addTransaction({
-          description: "New transaction from Example Add-on"
-        }).then(function (transaction) {
-          $('#result').html('New transaction:<br><code>' + JSON.stringify(transaction) + '</code>');
-        }).catch(function (err) {
-          $('#result').html('Error:<br><code>' + err + '</code>');
-        }).finally(function () {
-          $('#addTransaction').removeAttr('disabled');
-        });
-      });
-
-      $('#getTransactions').on('click', function () {
-        $(this).attr('disabled', 'disabled');
-
-        addon.api.getTransactions(getQueryFromOptions(addonOptions)).then(function (response) {
-          $('#result').html('List Transactions Result:<br><code>' + JSON.stringify(response) + '</code>');
-        }).catch(function (err) {
-          $('#result').html('Error:<br><code>' + err + '</code>');
-        }).finally(function () {
-          $('#getTransactions').removeAttr('disabled');
-        });
-      });
-*/
-      /*
-      $('#getPositions').on('click', function () {
-        $(this).attr('disabled', 'disabled');
-
-        addon.api.getPositions(getQueryFromOptions(addonOptions)).then(function (response) {
-          $('#result').html('List Positions Result:<br><code>' + JSON.stringify(response) + '</code>');
-        }).catch(function (err) {
-          $('#result').html('Error:<br><code>' + err + '</code>');
-        }).finally(function () {
-          $('#getPositions').removeAttr('disabled');
-        });
-      });
-*/
-      /*
-      $('#saveData').on('click', function () {
-        $(this).attr('disabled', 'disabled');
-        var newData = $('#data').val();
-
-        // Try parsing textarea value to a JSON object before passing to addon.saveData(data)
-        try { newData = JSON.parse(newData) }
-        catch (e) {
-          $('#result').html('Error:<br><code>Data must be JSON</code>');
-          $('#saveData').removeAttr('disabled');
-          return;
-        }
-
-        addon.saveData(newData).catch(function (err) {
-          $('#result').html('Error:<br><code>' + err + '</code>');
-        }).finally(function () {
-          $('#saveData').removeAttr('disabled');
-        });
-      });
-  */
-      /**/
       // Show addon data in result box and optionally update the text input.
       function showAddonData(data, updateInput) {
         $('#result').html('Addon data:<br><code>' + JSON.stringify(data) + '</code>');
@@ -114,7 +52,7 @@
       }
      
     });
-    /**/
+
   </script>
 
 </body>
