@@ -12,16 +12,12 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
 </head>
 <body>
-  <h3>This is my websites' Wealthica Add-on Example Version 1.1</h3>
+  <h3>Repo: darbrnfischer/mywebsite, Wealthica Add-on Example Version 1.2</h3>
   <p>Try some of the actions below:</p>
 
   <button type="button" disabled="disabled" id="getPositions">List Positions</button>
   
-  <button onclick="document.getElementById('myImage').src='pic_bulbon.gif'">Turn on the light</button>
-  <img id="myImage" src="pic_bulboff.gif" style="width:100px">
-  <button onclick="document.getElementById('myImage').src='pic_bulboff.gif'">Turn off the light</button>
-
-  <textarea id="data" rows="8" cols="100"></textarea>
+   <textarea id="data" rows="8" cols="100"></textarea>
   <div id="result"></div>
 
 
@@ -43,7 +39,23 @@
         addonOptions = _.extend(addonOptions, options);
         showAddonData(addonOptions.data);
       });
+      
+      $('#getPositions').on('click', function () {
+        $(this).attr('disabled', 'disabled');
 
+        addon.api.getPositions(getQueryFromOptions(addonOptions)).then(function (response) {
+          var symbols = "";
+          for (i in response) {
+              symbols += response[i].security.symbol + " ";
+              }
+          $('#result').html('List Positions Result:<br><code>' + symbols + '</code>');
+        }).catch(function (err) {
+          $('#result').html('Error:<br><code>' + err + '</code>');
+        }).finally(function () {
+          $('#getPositions').removeAttr('disabled');
+        });
+      });
+      
       // Show addon data in result box and optionally update the text input.
       function showAddonData(data, updateInput) {
         $('#result').html('Addon data:<br><code>' + JSON.stringify(data) + '</code>');
