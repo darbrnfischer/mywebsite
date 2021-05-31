@@ -12,11 +12,15 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
 </head>
 <body>
-  <h3>This is my Wealthica Add-on Example Version 1.</h3>
+  <h3>This is my websites' Wealthica Add-on Example Version 1.1</h3>
   <p>Try some of the actions below:</p>
 
   <button type="button" disabled="disabled" id="getPositions">List Positions</button>
   
+  <button onclick="document.getElementById('myImage').src='pic_bulbon.gif'">Turn on the light</button>
+  <img id="myImage" src="pic_bulboff.gif" style="width:100px">
+  <button onclick="document.getElementById('myImage').src='pic_bulboff.gif'">Turn off the light</button>
+
   <textarea id="data" rows="8" cols="100"></textarea>
   <div id="result"></div>
 
