@@ -16,7 +16,6 @@
   <p>Try some of the actions below:</p>
 
   <button type="button" disabled="disabled" id="getPositions">List Positions</button>
-   <button type="button" disabled="disabled" id="lightItUp">Light It Up</button> 
    <textarea id="data" rows="8" cols="100"></textarea>
   <div id="result"></div>
 
@@ -56,11 +55,7 @@
         });
       }); 
       
-      $('#lightItUp').on('click', function () {
-        $(this).attr('disabled', 'disabled');
-
-        });
-      
+     
       // Show addon data in result box and optionally update the text input.
       function showAddonData(data, updateInput) {
         $('#result').html('Addon data:<br><code>' + JSON.stringify(data) + '</code>');
